@@ -1,0 +1,68 @@
+---
+id: thf_sec_dmac_cs
+slug: thf_sec_dmac_cs
+title: SEC devices in CS
+---
+
+We have integrated two SEC devices in CS. This protocol allows remote access to the PCs running PSS winGPC and the transfer of experiment data to the Chemotion ELN’s inbox.
+
+:::info
+We have to take care that the name conventions are communicated to all users of Chemotion ELN:
+https://www.chemotion.net/chemotionsaurus/docs/eln/devices#name-conventions.
+:::
+
+## Integrated Devices
+- THF-SEC
+- DMAC
+
+## Specifications of Device
+- Software Name: PSS winGPC
+- Connected to Internet/Intranet: Yes
+- Data files generated: .txt files
+
+## Target Points
+
+ - **Remote Device Control:** We can control the integrated devices through Chemotion-ELN. This has been achieved
+ by the installation of the software, TightVNC. It works in a similar way as TeamViewer. Users can access the computer remotely through Chemotion-ELN.
+
+  - **Data Transfer:** Whenever the experiment is completed and a new data file is generated, we have to first rename the file according to the naming convention [below](/docs/devices/thf_sec_dmac_cs#file-naming-convention-details) and then transfer the file to a specific folder. Afterwards the file is transferred to ELN automatically.
+
+:::info
+General guideline regarding the remote device control can be found here:
+
+https://www.chemotion.net/chemotionsaurus/docs/eln/devices/remote_device_control
+:::
+
+## Data Transfer
+
+This part is very crucial to ensure proper data transfer mechanisms and has to be followed carefully.
+
+- While saving the file at the local location in the computer, the user has to name the file following the [naming convention](/docs/devices/thf_sec_cw#file-naming-convention-details). In this case the local location is **C:\Data**.
+
+- Merely renaming a file will not send it to Chemotion.
+
+- Before the software can finish writing the file, the naming must be ensured. Once all of the data has been entered into the file by the software, it will be copied to a remote location so that Chemotion can retrieve it. If the file name is modified after that, it will no longer be transferred to Chemotion ELN.
+
+- In case your file has been saved already without proper naming convention, just make some insignificant changes, like pressing an enter and save the file once again with proper naming. Then it will be transferred to Chemotion properly.
+
+- After the file is transferred, it will be available in the specific user inbox in Chemotion-ELN [(Demo)](https://www.awesomescreenshot.com/video/8282250?key=33d387cb0a14e86e65dff8a9cb393b92).
+
+![devices_4](/img/devices_4.png)
+
+## File Naming Convention Details
+
+:::info
+We have to make sure to communicate the naming convention rules to all users, [https://www.chemotion.net/chemotionsaurus/docs/eln/devices#name-conventions](https://www.chemotion.net/chemotionsaurus/docs/eln/devices#name-conventions)
+:::
+
+Following points have to be considered to ensure proper data transferring to Chemotion-ELN,
+
+- Since the files are transferred to the inbox for a particular user, the Kürzel of the user will identify to which user the file is to be sent. From the Kürzel part, Chemotion-ELN will identify it automatically. So it is important to specify the Kürzel properly at this point.
+
+So the files has to be named using the following format,
+
+**User Identifier (Name abbreviation/Kürzel) - filename**
+
+For example, if the name abbreviation for the user is 1DV, then the file has to be named as follows,
+
+>  1DV-filename
