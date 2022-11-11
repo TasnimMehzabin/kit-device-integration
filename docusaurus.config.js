@@ -61,8 +61,8 @@ const config = {
       navbar: {
         title: 'Device Instructions',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Chemotion Logo',
+          src: "img/favicon.ico",
         },
         items: [
           {
