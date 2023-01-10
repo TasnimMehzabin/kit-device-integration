@@ -20,6 +20,7 @@ const sidebars = {
         'devices/ir_alpha_cs',
         'devices/eis_cw',
         'devices/ir_vertex_cw',
+        'devices/tga_cw',
       ],
     },
   ],
